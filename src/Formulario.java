@@ -1,6 +1,9 @@
 
+
 import java.io.File;
 import javax.swing.JFileChooser;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,8 +17,9 @@ import javax.swing.JFileChooser;
  */
 public class Formulario extends javax.swing.JFrame {
 //gestor del DOM
-    DOM gesDOM= new DOM();
-    /**
+    DOM gesDOM = new DOM();
+   
+     /**
      * Creates new form Formulario
      */
     public Formulario() {
@@ -38,11 +42,16 @@ public class Formulario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        textPublicacion = new java.awt.TextField();
+        textAntiguo = new java.awt.TextField();
         textTitulo = new java.awt.TextField();
         textAutor = new java.awt.TextField();
         btnAnadir = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        seleccionador = new javax.swing.JComboBox<>();
+        btnModificar = new javax.swing.JButton();
+        textPublicacion = new java.awt.TextField();
+        textNuevo = new java.awt.TextField();
         ficherosXML = new javax.swing.JMenuBar();
         abrirDOM = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -67,9 +76,9 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel3.setText("Publicado en:");
 
-        textPublicacion.addActionListener(new java.awt.event.ActionListener() {
+        textAntiguo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textPublicacionActionPerformed(evt);
+                textAntiguoActionPerformed(evt);
             }
         });
 
@@ -101,6 +110,34 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Modificar:");
+
+        seleccionador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Título", "Autor", "Año de publicación" }));
+        seleccionador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seleccionadorActionPerformed(evt);
+            }
+        });
+
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+
+        textPublicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textPublicacionActionPerformed(evt);
+            }
+        });
+
+        textNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNuevoActionPerformed(evt);
+            }
+        });
+
         abrirDOM.setText("Ficheros XML");
 
         jMenuItem1.setText("Abrir DOM");
@@ -129,32 +166,52 @@ public class Formulario extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
+                                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(40, 40, 40)
+                                                .addComponent(seleccionador, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(textAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                                        .addComponent(textAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(56, 56, 56))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(174, 174, 174)
-                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(textAntiguo, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(171, 171, 171)
+                                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(491, Short.MAX_VALUE)
+                    .addContainerGap(612, Short.MAX_VALUE)
                     .addComponent(textTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(55, 55, 55)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(644, Short.MAX_VALUE)
+                    .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(254, 254, 254)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,19 +234,34 @@ public class Formulario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seleccionador))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textAntiguo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(76, Short.MAX_VALUE))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(89, 89, 89)
                     .addComponent(textTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(405, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(187, 187, 187)
+                    .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(310, Short.MAX_VALUE)))
         );
 
         pack();
@@ -224,9 +296,9 @@ public class Formulario extends javax.swing.JFrame {
      this.TextAreaDOM.setText(salida);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
-    private void textPublicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPublicacionActionPerformed
+    private void textAntiguoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAntiguoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textPublicacionActionPerformed
+    }//GEN-LAST:event_textAntiguoActionPerformed
 
     private void textTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTituloActionPerformed
         // TODO add your handling code here:
@@ -246,18 +318,57 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAnadirActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-JFileChooser guardar = new JFileChooser();
-        int seleccion = guardar.showSaveDialog(this);
-        if (seleccion == guardar.APPROVE_OPTION) {
-            File f = guardar.getSelectedFile();
+       JFileChooser guardar = new JFileChooser();
+       int seleccion=guardar.showSaveDialog(guardar);
+       if(seleccion==guardar.APPROVE_OPTION){
+       File f = guardar.getSelectedFile();
+       TextAreaDOM.setText(f.getAbsolutePath());
+      
         if (gesDOM.guardarDOMcomo() == -1) {
             this.mensajero.setText("Error al guardar");
         } else {
   
             this.mensajero.setText("Fichero guardado correctamente");
         }
-        }
+       }
+        
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void seleccionadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionadorActionPerformed
+        int seleccion = seleccionador.getSelectedIndex();
+        String opcion= seleccionador.getSelectedItem().toString();
+        if (opcion.equals("Título")){          
+              mensajero.setText("Has seleccionado modificar Título");
+        }
+        if (opcion.equals("Autor")){          
+              mensajero.setText("Has seleccionado modificar Autor");
+        }
+        if (opcion.equals("Año de publicación")){          
+              mensajero.setText("Has seleccionado modificar la Publicación");
+        }
+    
+
+    }//GEN-LAST:event_seleccionadorActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+   if(gesDOM.modificarTitulo(this.textAntiguo.getText(), this.textNuevo.getText()) == -1){
+            mensajero.setText("Error al modificar el título");
+        }else{
+       if(seleccionador.equals("Título")){
+            mensajero.setText("Modificación del título correcta");
+        }
+   }
+    
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void textPublicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPublicacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textPublicacionActionPerformed
+
+    private void textNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,15 +410,20 @@ JFileChooser guardar = new JFileChooser();
     private javax.swing.JMenu abrirDOM;
     private javax.swing.JButton btnAnadir;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnMostrar;
     private javax.swing.JMenuBar ficherosXML;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mensajero;
+    public javax.swing.JComboBox<String> seleccionador;
+    private java.awt.TextField textAntiguo;
     private java.awt.TextField textAutor;
+    private java.awt.TextField textNuevo;
     private java.awt.TextField textPublicacion;
     private java.awt.TextField textTitulo;
     // End of variables declaration//GEN-END:variables
@@ -327,7 +443,6 @@ JFileChooser guardar = new JFileChooser();
             f = fc.getSelectedFile();
         }
         return f;
-        
-        
+            
     }
 }

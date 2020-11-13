@@ -18,17 +18,16 @@ import org.w3c.dom.NodeList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author rocio
- * 
+ *
  * esta clase es para diseñar el árbol
  */
 public class DOM {
-    
+
     Document doc; //apuntador a la raiz del arbol
-    
+
     public int abrirXML(File fichero) {
         doc = null; //representa el árbol
 
@@ -42,14 +41,14 @@ public class DOM {
             //estructura el DOM a partir del xml que seleccionamos
             DocumentBuilder builder = factory.newDocumentBuilder();
             //mapea el fichero y me da el apuntador a la raíz
-            doc= builder.parse(fichero);
-            
+            doc = builder.parse(fichero);
+
             return 0;
         } catch (Exception e) {
             return -1; //solo si ha habido error
         }
     }
-    
+
     public String recorrerYmostrarDOM() {
 
         String salida = "";
@@ -128,26 +127,146 @@ public class DOM {
             return -1;
         }
     }
-    
+
     public int guardarDOMcomo() {
-       
+
         try {
-            File archivoXML= new File ("salida.xml");
+            File archivoXML = new File("salida.xml");
+
             //para especificar el formato de salida
-            OutputFormat format= new OutputFormat(doc);
+            OutputFormat format = new OutputFormat(doc);
             //para que el texto de salida este indentado
             format.setIndenting(true);
             //escribe el contenido en el File
-            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(archivoXML),format);
-            
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(archivoXML), format);
+
             //aqui es donde se almacena
             serializer.serialize(doc);
-      
+
             return 0;
         } catch (Exception e) {
             return -1;
         }
     }
 
+    //metodo para modificar y recorrer el titulo
+    public int modificarTitulo(String tAntiguo, String tNuevo) {
+
+        try {
+            for (int j = 0; j < 3; j++) {
+                Node nodoTitulo = doc.getElementsByTagName("Titulo").item(j);
+                NodeList nodeList = nodoTitulo.getChildNodes();
+                if (j == 0) {
+                    if (nodoTitulo.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("Titulo".equals(nodoTitulo.getNodeName())) {
+                            if (tAntiguo.equals(nodoTitulo.getTextContent())) {
+                                nodoTitulo.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+//he intentado resolverlo con un replaceChild() pero ha sido imposible
+                } else if (j == 1) {
+                    if (nodoTitulo.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("Titulo".equals(nodoTitulo.getNodeName())) {
+                            if (tAntiguo.equals(nodoTitulo.getTextContent())) {
+                                nodoTitulo.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+                } else {
+                    if (nodoTitulo.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("Titulo".equals(nodoTitulo.getNodeName())) {
+                            if (tAntiguo.equals(nodoTitulo.getTextContent())) {
+                                nodoTitulo.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+                }
+            }
+            return 0;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+//mismo metodo para el Autor
+    public int modificarAutor(String tAntiguo, String tNuevo) {
+
+        try {
+            for (int j = 0; j < 3; j++) {
+                Node nodoAutor = doc.getElementsByTagName("Autor").item(j);
+                NodeList nodeListAutor = nodoAutor.getChildNodes();
+                if (j == 0) {
+                    if (nodoAutor.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("Autor".equals(nodoAutor.getNodeName())) {
+                            if (tAntiguo.equals(nodoAutor.getTextContent())) {
+                                nodoAutor.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+
+                } else if (j == 1) {
+                    if (nodoAutor.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("Autor".equals(nodoAutor.getNodeName())) {
+                            if (tAntiguo.equals(nodoAutor.getTextContent())) {
+                                nodoAutor.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+                } else {
+                    if (nodoAutor.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("Autor".equals(nodoAutor.getNodeName())) {
+                            if (tAntiguo.equals(nodoAutor.getTextContent())) {
+                                nodoAutor.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+                }
+            }
+            return 0;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    //Para modificar el año de publicación
+    public int modificarPublicacion(String tAntiguo, String tNuevo) {
+
+        try {
+            for (int j = 0; j < 3; j++) {
+                Node nodoPublicacion = doc.getElementsByTagName("publicado_en").item(j);
+                NodeList nodeList = nodoPublicacion.getChildNodes();
+                if (j == 0) {
+                    if (nodoPublicacion.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("publicado_en:".equals(nodoPublicacion.getNodeName())) {
+                            if (tAntiguo.equals(nodoPublicacion.getTextContent())) {
+                                nodoPublicacion.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+
+                } else if (j == 1) {
+                    if (nodoPublicacion.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("publicado_en".equals(nodoPublicacion.getNodeName())) {
+                            if (tAntiguo.equals(nodoPublicacion.getTextContent())) {
+                                nodoPublicacion.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+                } else {
+                    if (nodoPublicacion.getNodeType() == Node.ELEMENT_NODE) {
+                        if ("publicado_en".equals(nodoPublicacion.getNodeName())) {
+                            if (tAntiguo.equals(nodoPublicacion.getTextContent())) {
+                                nodoPublicacion.setTextContent(tNuevo);
+                            }
+                        }
+                    }
+                }
+            }
+            return 0;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
 
 }

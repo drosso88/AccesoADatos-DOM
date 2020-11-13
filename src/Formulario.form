@@ -56,31 +56,53 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="387" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnAnadir" min="-2" pref="102" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" attributes="0">
+                                      <Component id="jLabel4" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace pref="337" max="32767" attributes="0"/>
+                                              <Component id="btnGuardar" min="-2" pref="186" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                              <Component id="seleccionador" min="-2" pref="181" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="jLabel2" max="32767" attributes="0"/>
                                           <Component id="jLabel1" alignment="1" pref="60" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="131" max="32767" attributes="0"/>
                                       <Component id="textAutor" min="-2" pref="402" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel3" min="-2" pref="109" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="textPublicacion" min="-2" pref="171" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnAnadir" min="-2" pref="102" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
-                              <Component id="btnGuardar" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Component id="textAntiguo" min="-2" pref="251" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="textNuevo" min="-2" pref="251" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                                      <Component id="btnModificar" min="-2" pref="186" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -89,9 +111,16 @@
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="491" max="32767" attributes="0"/>
+                  <EmptySpace pref="612" max="32767" attributes="0"/>
                   <Component id="textTitulo" min="-2" pref="402" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="644" max="32767" attributes="0"/>
+                  <Component id="textPublicacion" min="-2" pref="171" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -110,7 +139,7 @@
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="29" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -121,24 +150,43 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel3" max="32767" attributes="0"/>
-                          <Component id="textPublicacion" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="btnAnadir" min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="btnGuardar" min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel4" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="seleccionador" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="textAntiguo" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="textNuevo" min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="btnModificar" min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="378" max="-2" attributes="0"/>
+                      <EmptySpace pref="76" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="textTitulo" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace pref="405" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                  <Component id="textPublicacion" min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace pref="310" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -183,9 +231,9 @@
         <Property name="text" type="java.lang.String" value="Publicado en:"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textPublicacion">
+    <Component class="java.awt.TextField" name="textAntiguo">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textPublicacionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textAntiguoActionPerformed"/>
       </Events>
     </Component>
     <Component class="java.awt.TextField" name="textTitulo">
@@ -214,6 +262,47 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modificar:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="seleccionador">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="T&#xed;tulo"/>
+            <StringItem index="1" value="Autor"/>
+            <StringItem index="2" value="A&#xf1;o de publicaci&#xf3;n"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="seleccionadorActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnModificar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modificar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="java.awt.TextField" name="textPublicacion">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textPublicacionActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="java.awt.TextField" name="textNuevo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textNuevoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
