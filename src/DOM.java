@@ -151,121 +151,59 @@ public class DOM {
 
     //metodo para modificar y recorrer el titulo
     public int modificarTitulo(String tAntiguo, String tNuevo) {
-
         try {
-            for (int j = 0; j < 3; j++) {
-                Node nodoTitulo = doc.getElementsByTagName("Titulo").item(j);
-                NodeList nodeList = nodoTitulo.getChildNodes();
-                if (j == 0) {
-                    if (nodoTitulo.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("Titulo".equals(nodoTitulo.getNodeName())) {
-                            if (tAntiguo.equals(nodoTitulo.getTextContent())) {
-                                nodoTitulo.setTextContent(tNuevo);
-                            }
-                        }
-                    }
-//he intentado resolverlo con un replaceChild() pero ha sido imposible
-                } else if (j == 1) {
-                    if (nodoTitulo.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("Titulo".equals(nodoTitulo.getNodeName())) {
-                            if (tAntiguo.equals(nodoTitulo.getTextContent())) {
-                                nodoTitulo.setTextContent(tNuevo);
-                            }
-                        }
-                    }
-                } else {
-                    if (nodoTitulo.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("Titulo".equals(nodoTitulo.getNodeName())) {
-                            if (tAntiguo.equals(nodoTitulo.getTextContent())) {
-                                nodoTitulo.setTextContent(tNuevo);
-                            }
-                        }
-                    }
+            NodeList listaTitulos = doc.getElementsByTagName("Titulo");
+            for (int i = 0; i < listaTitulos.getLength(); i++) {
+                Node ntemporal = listaTitulos.item(i);
+                //comparamos y reemplazamos
+                if (ntemporal.getFirstChild().getNodeValue().equals(tAntiguo)) {
+                    ntemporal.getFirstChild().setTextContent(tNuevo);
+                    return 0;
                 }
             }
             return 0;
         } catch (Exception e) {
-            return -1;
+            {
+                return -1;
+            }
         }
     }
-
 //mismo metodo para el Autor
     public int modificarAutor(String tAntiguo, String tNuevo) {
-
-        try {
-            for (int j = 0; j < 3; j++) {
-                Node nodoAutor = doc.getElementsByTagName("Autor").item(j);
-                NodeList nodeListAutor = nodoAutor.getChildNodes();
-                if (j == 0) {
-                    if (nodoAutor.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("Autor".equals(nodoAutor.getNodeName())) {
-                            if (tAntiguo.equals(nodoAutor.getTextContent())) {
-                                nodoAutor.setTextContent(tNuevo);
-                            }
-                        }
-                    }
-
-                } else if (j == 1) {
-                    if (nodoAutor.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("Autor".equals(nodoAutor.getNodeName())) {
-                            if (tAntiguo.equals(nodoAutor.getTextContent())) {
-                                nodoAutor.setTextContent(tNuevo);
-                            }
-                        }
-                    }
-                } else {
-                    if (nodoAutor.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("Autor".equals(nodoAutor.getNodeName())) {
-                            if (tAntiguo.equals(nodoAutor.getTextContent())) {
-                                nodoAutor.setTextContent(tNuevo);
-                            }
-                        }
-                    }
+           try {
+            NodeList listaAutor = doc.getElementsByTagName("Autor");
+            for (int i = 0; i < listaAutor.getLength(); i++) {
+                Node ntemporal = listaAutor.item(i);
+                //comparamos y reemplazamos
+                if (ntemporal.getFirstChild().getNodeValue().equals(tAntiguo)) {
+                    ntemporal.getFirstChild().setTextContent(tNuevo);
+                    return 0;
                 }
             }
             return 0;
         } catch (Exception e) {
-            return -1;
+            {
+                return -1;
+            }
         }
     }
-
     //Para modificar el año de publicación
     public int modificarPublicacion(String tAntiguo, String tNuevo) {
-
-        try {
-            for (int j = 0; j < 3; j++) {
-                Node nodoPublicacion = doc.getElementsByTagName("publicado_en").item(j);
-                NodeList nodeList = nodoPublicacion.getChildNodes();
-                if (j == 0) {
-                    if (nodoPublicacion.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("publicado_en:".equals(nodoPublicacion.getNodeName())) {
-                            if (tAntiguo.equals(nodoPublicacion.getTextContent())) {
-                                nodoPublicacion.setTextContent(tNuevo);
-                            }
-                        }
-                    }
-
-                } else if (j == 1) {
-                    if (nodoPublicacion.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("publicado_en".equals(nodoPublicacion.getNodeName())) {
-                            if (tAntiguo.equals(nodoPublicacion.getTextContent())) {
-                                nodoPublicacion.setTextContent(tNuevo);
-                            }
-                        }
-                    }
-                } else {
-                    if (nodoPublicacion.getNodeType() == Node.ELEMENT_NODE) {
-                        if ("publicado_en".equals(nodoPublicacion.getNodeName())) {
-                            if (tAntiguo.equals(nodoPublicacion.getTextContent())) {
-                                nodoPublicacion.setTextContent(tNuevo);
-                            }
-                        }
-                    }
+     try {
+            NodeList listaPubl = doc.getElementsByTagName("publicado_en");
+            for (int i = 0; i < listaPubl.getLength(); i++) {
+                Node ntemporal = listaPubl.item(i);
+                //comparamos y reemplazamos
+                if (ntemporal.getFirstChild().getNodeValue().equals(tAntiguo)) {
+                    ntemporal.getFirstChild().setTextContent(tNuevo);
+                    return 0;
                 }
             }
             return 0;
         } catch (Exception e) {
-            return -1;
+            {
+                return -1;
+            }
         }
     }
 
